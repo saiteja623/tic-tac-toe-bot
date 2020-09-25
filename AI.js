@@ -9,7 +9,7 @@ let scores = {
 var currentPlayer = "o"; //declare the current player
 //make changes to the board;
 function markSymbol(i) {
-  if (currentPlayer == "o") {
+  if (currentPlayer == "o" && board[i] == "") {
     board[i] = "o";
     resetBoard(board);
     changePlayer();
