@@ -1,5 +1,5 @@
 //tic tac toe board
-var board = ["x", "", "", "", "", "", "", "", ""];
+var board = ["", "", "", "", "", "", "", "", ""];
 //declare the scores
 let scores = {
   x: 1,
@@ -47,20 +47,19 @@ function resetBoard(board) {
 function emptyBoard() {
   var cells = document.querySelectorAll(".cell");
   for (var i = 0; i < cells.length; i++) {
-    if (i == 0) {
-      cells[i].innerHTML = "x";
-    } else {
-      cells[i].innerHTML = "";
-    }
+    // if (i == 0) {
+    //  cells[i].innerHTML = "x";
+    //} else {
+    cells[i].innerHTML = "";
+    //}
   }
   for (var i = 0; i < board.length; i++) {
-    if (i == 0) {
-      board[i] = "x";
-    } else {
-      board[i] = "";
-    }
+    // if (i == 0) {
+    // board[i] = "x";
+    //} else {
+    board[i] = "";
+    //}
   }
-  console.log("empty", board);
 }
 
 //declare the winner on screen
@@ -114,7 +113,8 @@ function checkwin() {
       }
     }
     if (emptyEle == 9) {
-      return "tie";
+      winner = "tie";
+      return winner;
     }
   }
 }
@@ -128,7 +128,6 @@ function checkEqual(a, b, c) {
     return false;
   }
 }
-
 //deciding the next best step by AI
 function nextBestStep() {
   var bestScore = -Infinity;
@@ -149,17 +148,16 @@ function nextBestStep() {
 }
 function miniMax(board, isMaxiPlaying) {
   //check if the selected place wins
-  var winner = checkwin();
+  let winner = checkwin();
   if (winner != null) {
     return scores[winner];
-  }
-  if (isMaxiPlaying) {
+  } else if (isMaxiPlaying) {
     //check for ai
     let bestScore = -Infinity;
     for (var i = 0; i < board.length; i++) {
       if (board[i] == "") {
         board[i] = "x";
-        let score = miniMax(false);
+        let score = miniMax(board, false);
         board[i] = "";
         if (score > bestScore) {
           bestScore = score;
