@@ -1,5 +1,5 @@
 //tic tac toe board
-var board = ["", "", "", "", "", "", "", "", ""];
+var board = ["x", "", "", "", "", "", "", "", ""];
 //declare the scores
 let scores = {
   x: 1,
@@ -47,10 +47,18 @@ function resetBoard(board) {
 function emptyBoard() {
   var cells = document.querySelectorAll(".cell");
   for (var i = 0; i < cells.length; i++) {
-    cells[i].innerHTML = "";
+    if (i == 0) {
+      cells[i].innerHTML = "x";
+    } else {
+      cells[i].innerHTML = "";
+    }
   }
   for (var i = 0; i < board.length; i++) {
-    board[i] = "";
+    if (i == 0) {
+      board[i] = "x";
+    } else {
+      board[i] = "";
+    }
   }
   console.log("empty", board);
 }
