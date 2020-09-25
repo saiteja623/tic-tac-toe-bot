@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="project.css" />
+    <title>TIC TAC TOE BOT</title>
+  </head>
+  <body>
+    <div class="total">
+      <h4 align="center">I bet you can't win!</h4>
+      <table>
+        <tr>
+          <td class="cell" onClick="markSymbol(0)"></td>
+          <td class="cell" onClick="markSymbol(1)"></td>
+          <td class="cell" onClick="markSymbol(2)"></td>
+        </tr>
+        <tr>
+          <td class="cell" onClick="markSymbol(3)"></td>
+          <td class="cell" onClick="markSymbol(4)"></td>
+          <td class="cell" onClick="markSymbol(5)"></td>
+        </tr>
+        <tr>
+          <td class="cell" onClick="markSymbol(6)"></td>
+          <td class="cell" onClick="markSymbol(7)"></td>
+          <td class="cell" onClick="markSymbol(8)"></td>
+        </tr>
+      </table>
+      <div id="win"></div>
+    </div>
+    <script src="AI.js" type="text/javascript"></script>
+  </body>
+</html>
